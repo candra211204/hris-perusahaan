@@ -29,6 +29,7 @@ return new class extends Migration
             $table->enum('blood_type', ['A', 'B', 'AB', 'O'])->nullable();
             $table->enum('religion', ['Katolik', 'Islam', 'Kristen', 'Buddha', 'Hindu', 'Lainnya'])->nullable();
             $table->string('password');
+            $table->string('photo')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

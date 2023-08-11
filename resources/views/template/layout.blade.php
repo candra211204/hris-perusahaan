@@ -29,6 +29,18 @@
             <div class="page-header d-print-none">
                 <div class="container-xl">
 
+                    @if (session()->has('success'))
+                        <div class="alert alert-success" id="session-alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if (session()->has('error'))
+                        <div class="alert alert-danger" id="session-alert-error">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
                     @yield('content_header')
 
                 </div>
@@ -56,6 +68,23 @@
     <!-- Tabler Core -->
     <script src="{{ asset('template/dist/js/tabler.min.js?1684106062') }}" defer></script>
     <script src="{{ asset('template/dist/js/demo.min.js?1684106062') }}" defer></script>
+    <script src="{{ asset('template/jquery/jquery.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            let alertSuccess = $('#session-alert-success');
+            let alertError = $('#session-alert-error');
+
+            setTimeout(function() {
+                alertSuccess.fadeOut();
+            }, 2000);
+
+            setTimeout(function() {
+                alertError.fadeOut();
+            }, 2000);
+        });
+    </script>
+
+    @yield('script')
 </body>
 
 </html>

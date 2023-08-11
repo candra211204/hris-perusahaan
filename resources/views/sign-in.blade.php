@@ -81,7 +81,7 @@
         </div>
     </div>
     <div class="text-center text-muted mt-3">
-        Don't have account yet? <a href="{{ url('/sign-up') }}" tabindex="-1">Sign up</a>
+        Belum punya akun? <a href="{{ url('/sign-up') }}" tabindex="-1">Sign up</a>
     </div>
 @endsection
 
